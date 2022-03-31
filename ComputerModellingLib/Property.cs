@@ -4,6 +4,8 @@ namespace ComputerModellingLib
 {
     public class Property
     {
+        private bool Reversed = false;
+
         private string propetyName;
         //Название свойства контроллера
         public string Name
@@ -75,11 +77,12 @@ namespace ComputerModellingLib
             return ((double)SumOfExpertAssessments / ExpertAssessments.Count) / propertyesAverageExpertAssessmentsSum;
         }
 
-        public Property(string PropertyName, double PropertyValue, List<int> ExpertAssessments)
+        public Property(string PropertyName, double PropertyValue, List<int> ExpertAssessments, bool IsReversed)
         {
             propetyName = PropertyName;
             propertyValue = PropertyValue;
             this.ExpertAssessments = ExpertAssessments;
+            Reversed = IsReversed;
         }
 
         //Получение Аддитивной оценки
@@ -92,11 +95,17 @@ namespace ComputerModellingLib
             {
                 if (propertyInfo.Name == Name)
                 {
-                    AdditiveEstimate = (propertyInfo.MaxValue - Value) / (propertyInfo.MaxValue - propertyInfo.MinValue);
+                    if (Reversed)
+                    {
+                        AdditiveEstimate = (propertyInfo.MaxValue - Value) / (propertyInfo.MaxValue - propertyInfo.MinValue);
+                    }
+                    else
+                    {
+                        AdditiveEstimate = (Value - propertyInfo.MinValue) / (propertyInfo.MaxValue - propertyInfo.MinValue);
+                    }
                     break;
                 }
             }
-
             return AdditiveEstimate;
         }
     }

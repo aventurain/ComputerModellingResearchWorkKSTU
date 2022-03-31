@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "UsingExample/1.0.0": {
+        "dependencies": {
+          "ComputerModellingLib": "1.0.0"
+        },
+        "runtime": {
+          "UsingExample.dll": {}
+        }
+      },
+      "ComputerModellingLib/1.0.0": {
+        "runtime": {
+          "ComputerModellingLib.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "UsingExample/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ComputerModellingLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

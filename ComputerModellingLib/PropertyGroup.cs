@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ComputerModellingLib
 {
@@ -22,7 +18,7 @@ namespace ComputerModellingLib
                 properties = value;
             }
         }
-        
+
         private string propetyGroupName;
         //Название группы свойств
         public string PropetyGroupName
@@ -44,7 +40,7 @@ namespace ComputerModellingLib
         }
 
         private double propertyesAverageExpertAssessmentsSum = 0;
-        
+
         // Сумма средних всех свойств
         public double PropertyesAverageExpertAssessmentsSum
         {
@@ -66,10 +62,10 @@ namespace ComputerModellingLib
         //Добавить свойство
         public void AddProperty(Property property)
         {
-            if(property != null)
+            if (property != null)
                 Properties.Add(property);
         }
-        
+
         //Удалить свойство
         public void DeleteProperty(string PropertyName)
         {
@@ -102,7 +98,7 @@ namespace ComputerModellingLib
         public double SetAdditiveEstimate(List<PropertyInfo> propertyInfos)
         {
             AdditiveEstimate = 0;
-            foreach(Property property in properties)
+            foreach (Property property in properties)
             {
                 AdditiveEstimate += property.SetAdditiveEstimate(propertyInfos) * property.WeightCoefficient(PropertyesAverageExpertAssessmentsSum);
             }

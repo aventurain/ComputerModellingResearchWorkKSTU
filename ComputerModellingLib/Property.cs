@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ComputerModellingLib
 {
@@ -44,7 +40,7 @@ namespace ComputerModellingLib
                 expertAssessments = value;
             }
         }
-        
+
         private int sumOfExpertAssessments = 0;
         //Сумма экспертных оценок
         public int SumOfExpertAssessments
@@ -63,7 +59,7 @@ namespace ComputerModellingLib
                 return sumOfExpertAssessments;
             }
         }
-        
+
         //Средняя оценка экспертов
         public double AverageExpertAssessment
         {
@@ -92,9 +88,9 @@ namespace ComputerModellingLib
         {
             AdditiveEstimate = 0;
 
-            foreach(PropertyInfo propertyInfo in PropertyInfos)
+            foreach (PropertyInfo propertyInfo in PropertyInfos)
             {
-                if(propertyInfo.Name == Name)
+                if (propertyInfo.Name == Name)
                 {
                     AdditiveEstimate = (propertyInfo.MaxValue - Value) / (propertyInfo.MaxValue - propertyInfo.MinValue);
                     break;

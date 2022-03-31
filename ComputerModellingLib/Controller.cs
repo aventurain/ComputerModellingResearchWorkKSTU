@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ComputerModellingLib
 {
@@ -43,7 +39,7 @@ namespace ComputerModellingLib
         public double SetAdditiveEstimate(List<PropertyInfo> propertyInfos)
         {
             AdditiveEstimate = 0;
-            foreach(PropertyGroup propertyGroup in propertyGroups)
+            foreach (PropertyGroup propertyGroup in propertyGroups)
             {
                 AdditiveEstimate += propertyGroup.SetAdditiveEstimate(propertyInfos);
             }

@@ -2,14 +2,14 @@
 using ComputerModellingLib;
 using System.Collections.Generic;
 
-namespace UsingExample
+namespace UsageExample
 {
     class Program
     {
         static void Main(string[] args)
         {
             //Проперти для контроллера 1
-            Property property = new Property("property1", 10, new List<int> {10, 5, 6, 3, 2});
+            Property property = new Property("property1", 10, new List<int> { 10, 5, 6, 3, 2 });
             Property property1 = new Property("property2", 7, new List<int> { 10, 6, 6, 6, 7 });
             Property property2 = new Property("property3", 8, new List<int> { 1, 5, 1, 3, 4 });
             //группы свойств контроллера 1
@@ -19,7 +19,7 @@ namespace UsingExample
             propertyGroup1.AddProperty(property1);
             propertyGroup2.AddProperty(property2);
 
-            Controller controller = new Controller("Controller1", new List<PropertyGroup> {propertyGroup1, propertyGroup2});
+            Controller controller = new Controller("Controller1", new List<PropertyGroup> { propertyGroup1, propertyGroup2 });
 
             //проперти для контроллера 2 Отличаются значением и оценками
             Property property3 = new Property("property1", 6, new List<int> { 3, 9, 6, 8, 2 });

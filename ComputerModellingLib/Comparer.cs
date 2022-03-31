@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ComputerModellingLib
 {
     public class Comparer
     {
-        public Comparer() {}
+        public Comparer() { }
 
         public Comparer(List<Controller> Controllers)
         {
@@ -36,21 +32,21 @@ namespace ComputerModellingLib
         {
             get
             {
-                if(propertyInfos == null)
+                if (propertyInfos == null)
                 {
                     propertyInfos = new List<PropertyInfo>();
 
                     bool exist;
                     for (int controller = 0; controller < Controllers.Count; controller++)
                     {
-                        for(int propertyGroop = 0; propertyGroop < Controllers[controller].PropertyGroups.Count; propertyGroop++)
+                        for (int propertyGroop = 0; propertyGroop < Controllers[controller].PropertyGroups.Count; propertyGroop++)
                         {
-                            for(int property = 0; property < Controllers[controller].PropertyGroups[propertyGroop].Properties.Count; property++)
+                            for (int property = 0; property < Controllers[controller].PropertyGroups[propertyGroop].Properties.Count; property++)
                             {
                                 exist = false;
                                 for (int propertyInfo = 0; propertyInfo < propertyInfos.Count; propertyInfo++)
                                 {
-                                    if(propertyInfos[propertyInfo].Name == Controllers[controller].PropertyGroups[propertyGroop].Properties[property].Name)
+                                    if (propertyInfos[propertyInfo].Name == Controllers[controller].PropertyGroups[propertyGroop].Properties[property].Name)
                                     {
                                         propertyInfos[propertyInfo].SetValue(Controllers[controller].PropertyGroups[propertyGroop].Properties[property].Value);
                                         exist = true;

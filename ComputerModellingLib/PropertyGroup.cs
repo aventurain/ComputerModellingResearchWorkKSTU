@@ -15,7 +15,7 @@ namespace ComputerModellingLib
             set
             {
                 propertyesAverageExpertAssessmentsSum = 0;
-                properties = value;
+                properties = new List<Property>(value);
             }
         }
 

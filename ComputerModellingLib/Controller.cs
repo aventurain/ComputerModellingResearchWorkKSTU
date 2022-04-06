@@ -9,6 +9,16 @@ namespace ComputerModellingLib
             controllerName = ControlerName;
             propertyGroups = PropertyGroups;
         }
+        public Controller(string ControlerName)
+        {
+            controllerName = ControlerName;
+            propertyGroups = new List<PropertyGroup>();
+        }
+
+        public void AddPropertyGroup(PropertyGroup propertyGroup)
+        {
+            propertyGroups.Add(propertyGroup);
+        }
 
         private List<PropertyGroup> propertyGroups = new List<PropertyGroup>();
         //Группы свойств
@@ -20,7 +30,7 @@ namespace ComputerModellingLib
             }
             set
             {
-                propertyGroups = value;
+                propertyGroups = new List<PropertyGroup>(value);
             }
         }
 

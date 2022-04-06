@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Tests
 {
     [TestFixture]
-    public class Test
+    public class ControllerTest
     {
         [Test]
         public void ProperyGroupsTest()

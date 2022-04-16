@@ -79,20 +79,6 @@ namespace ComputerModellingLib
             }
         }
 
-        //Обновить оценки экспертов
-        public void UpdateExpertAssessments(string name, List<int> ExpertAssessments)
-        {
-            propertyesAverageExpertAssessmentsSum = 0;
-            foreach (Property property in properties)
-            {
-                if (property.Name == name)
-                {
-                    property.ExpertAssessments = ExpertAssessments;
-                    return;
-                }
-            }
-        }
-
         public double AdditiveEstimate { get; private set; }
         //Получение Аддитивной оценки
         public double SetAdditiveEstimate(List<PropertyInfo> propertyInfos)
@@ -103,6 +89,13 @@ namespace ComputerModellingLib
                 AdditiveEstimate += property.SetAdditiveEstimate(propertyInfos) * property.WeightCoefficient(PropertyesAverageExpertAssessmentsSum);
             }
             return AdditiveEstimate;
+        }
+
+        public void Reload()
+        {
+            AdditiveEstimate = 0;
+            propertyesAverageExpertAssessmentsSum = 0;
+
         }
     }
 }

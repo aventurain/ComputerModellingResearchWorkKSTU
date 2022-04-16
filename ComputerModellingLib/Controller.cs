@@ -17,6 +17,7 @@ namespace ComputerModellingLib
 
         public void AddPropertyGroup(PropertyGroup propertyGroup)
         {
+            AdditiveEstimate = 0;
             propertyGroups.Add(propertyGroup);
         }
 
@@ -30,6 +31,7 @@ namespace ComputerModellingLib
             }
             set
             {
+                AdditiveEstimate = 0;
                 propertyGroups = new List<PropertyGroup>(value);
             }
         }
@@ -54,6 +56,25 @@ namespace ComputerModellingLib
                 AdditiveEstimate += propertyGroup.SetAdditiveEstimate(propertyInfos);
             }
             return AdditiveEstimate;
+        }
+
+        //Обновление экспертных оценок true если были обновлены, false если не найдена группа
+        public bool UpdateProperyExpertAssessments(string propertyName, List<int> ExpertAssessments)
+        {
+            AdditiveEstimate = 0;
+            for(int i = 0; i < propertyGroups.Count; i++)
+            {
+                for(int j = 0; j < propertyGroups[i].Properties.Count; j++)
+                {
+                    if(propertyName == propertyGroups[i].Properties[j].Name)
+                    {
+                        propertyGroups[i].Properties[j].ExpertAssessments = new List<int>(ExpertAssessments);
+                        propertyGroups[i].Reload();
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
     }
 }

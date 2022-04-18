@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ComputerModellingLib
 {
+    [Serializable()]
     public class PropertyGroup
     {
         private List<Property> properties = new List<Property>();

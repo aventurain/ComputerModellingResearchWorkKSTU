@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ComputerModellingLib
 {
+    [Serializable()]
     public class Property
     {
         private bool Reversed = false;

@@ -9,7 +9,10 @@ namespace UsageExample
 
         static void Main(string[] args)
         {
-            ExcelTest();
+            //SaveTest();
+            Controller controller1 = Controller.Load("LolKEk2000");
+            int i = 0;
+            //ExcelTest();
         }
 
         public void CreateControllers()
@@ -266,5 +269,45 @@ namespace UsageExample
             string filePath = @"C:\AvotsLog\file.csv";
             FileWriter.CreateCSVfileAndWrite(controllers, filePath);
         }
+
+        static public void SaveTest()
+        {
+            //создание контроллера с параметрами
+            List<PropertyGroup> propertyGroups = new List<PropertyGroup>();
+
+            Property property = new Property("Время выполнения операции", 6, new List<int> { 2, 2, 2, 2, 3, 3, 3, 3, 3, 3 }, true);
+            Property property1 = new Property("Функциональность", 2, new List<int> { 9, 9, 9, 9, 9, 9, 9, 9, 9, 9 }, false);
+            Property property2 = new Property("Наработак на отказ", 100000, new List<int> { 4, 5, 5, 5, 5, 5, 5, 4, 5, 6 }, false);
+            Property property3 = new Property("ср. вр. восстановления", 2, new List<int> { 7, 5, 6, 5, 6, 5, 7, 7, 7, 7 }, true);
+            Property property4 = new Property("Стоимость оборудования", 3183.95, new List<int> { 3, 3, 3, 3, 3, 3, 4, 3, 3, 3 }, true);
+            Property property5 = new Property("Стоимость монтажа", 500, new List<int> { 4, 4, 4, 4, 5, 6, 4, 5, 6, 4 }, true);
+            Property property6 = new Property("Потребляемая мощность", 4, new List<int> { 5, 5, 5, 8, 7, 5, 8, 7, 5, 7 }, true);
+            Property property7 = new Property("Гарантийный срок", 1, new List<int> { 3, 3, 3, 3, 3, 4, 3, 3, 4, 4 }, false);
+            Property property8 = new Property("Масса", 0.3, new List<int> { 2, 2, 2, 2, 2, 2, 3, 2, 3, 2 }, true);
+
+            PropertyGroup propertyGroup1 = new PropertyGroup("Производительность");
+            PropertyGroup propertyGroup2 = new PropertyGroup("Надёжность");
+            PropertyGroup propertyGroup3 = new PropertyGroup("Затраты");
+
+            propertyGroup1.AddProperty(property);
+            propertyGroup1.AddProperty(property1);
+            propertyGroup2.AddProperty(property2);
+            propertyGroup2.AddProperty(property3);
+            propertyGroup3.AddProperty(property4);
+            propertyGroup3.AddProperty(property5);
+            propertyGroup3.AddProperty(property6);
+            propertyGroup3.AddProperty(property7);
+            propertyGroup3.AddProperty(property8);
+
+            propertyGroups.Add(propertyGroup1);
+            propertyGroups.Add(propertyGroup2);
+            propertyGroups.Add(propertyGroup3);
+
+            Controller controller1 = new Controller("LolKEk2000", propertyGroups);
+
+            controller1.Save();
+        }
+
+
     }
 }

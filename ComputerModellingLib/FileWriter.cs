@@ -64,7 +64,7 @@ namespace ComputerModellingLib
             }
 
             streamWriter.WriteLine();
-            streamWriter.WriteLine("\"Название контроллера\"" + ";" + "\"Адитивная оценка конроллера\"");
+            streamWriter.WriteLine("\"Название контроллера\"" + ";" + "\"Аддитивная оценка контроллера\"");
 
             foreach (Controller controller in controllers)
             {

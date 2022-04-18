@@ -10,9 +10,9 @@ namespace UsageExample
         static void Main(string[] args)
         {
             //SaveTest();
-            Controller controller1 = Controller.Load("LolKEk2000");
-            int i = 0;
-            //ExcelTest();
+            //Controller controller1 = Controller.Load("LolKEk2000");
+            //int i = 0;
+            ExcelTest();
         }
 
         public void CreateControllers()
@@ -267,7 +267,7 @@ namespace UsageExample
             controller7.SetAdditiveEstimate(comparer.PropertyInfos);
 
             string filePath = @"C:\AvotsLog\file.csv";
-            FileWriter.CreateCSVfileAndWrite(controllers, filePath);
+            FileWriter.CreateCSVfileAndWrite(controllers, 10, filePath);
         }
 
         static public void SaveTest()

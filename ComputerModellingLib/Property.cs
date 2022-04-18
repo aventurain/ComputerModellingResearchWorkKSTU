@@ -6,7 +6,9 @@ namespace ComputerModellingLib
     [Serializable()]
     public class Property
     {
-        private bool Reversed = false;
+        private bool reversed = false;
+
+        public bool Reversed { get { return reversed; }}
 
         private string propetyName;
         //Название свойства контроллера
@@ -84,7 +86,7 @@ namespace ComputerModellingLib
             propetyName = PropertyName;
             propertyValue = PropertyValue;
             this.ExpertAssessments = ExpertAssessments;
-            Reversed = IsReversed;
+            reversed = IsReversed;
         }
 
         //Получение Аддитивной оценки
@@ -97,7 +99,7 @@ namespace ComputerModellingLib
             {
                 if (propertyInfo.Name == Name)
                 {
-                    if (Reversed)
+                    if (reversed)
                     {
                         AdditiveEstimate = (propertyInfo.MaxValue - Value) / (propertyInfo.MaxValue - propertyInfo.MinValue);
                     }

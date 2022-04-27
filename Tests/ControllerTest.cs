@@ -100,7 +100,7 @@ namespace Tests
             propertyGroups.Add(propertyGroup2);
             propertyGroups.Add(propertyGroup3);
 
-            Controller controller1 = new Controller("Controller1", propertyGroups);
+            Controller controller1 = new Controller("I-8837", propertyGroups);
 
             List<PropertyGroup> propertyGroups2 = new List<PropertyGroup>();
             //Проперти для контроллера 2
@@ -133,7 +133,7 @@ namespace Tests
             propertyGroups2.Add(propertyGroup22);
             propertyGroups2.Add(propertyGroup32);
 
-            Controller controller2 = new Controller("Controller2", propertyGroups2);
+            Controller controller2 = new Controller("Adam-5000", propertyGroups2);
 
             List<PropertyGroup> propertyGroups3 = new List<PropertyGroup>();
             //Проперти для контроллера 3

@@ -10,8 +10,8 @@ namespace UsageExample
         static void Main(string[] args)
         {
             //SaveTest();
-            //List<Controller> controllers = ControllerGroupSaver.Load(Environment.CurrentDirectory + @"\Controllers\grName");
-            //int i = 0;
+            List<Controller> controllers = ControllerGroupSaver.Load(Environment.CurrentDirectory + @"\Controllers\grName");
+            int i = 0;
             //ExcelTest();
         }
 

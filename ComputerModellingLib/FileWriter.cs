@@ -66,7 +66,7 @@ namespace ComputerModellingLib
             }
 
             streamWriter.WriteLine();
-            streamWriter.WriteLine("\"Название контроллера\"" + ";" + "\"Аддитивная оценка контроллера\"");
+            streamWriter.WriteLine("\"Название контроллера\"" + ";" + "\"Интегральная оценка контроллера\"");
 
             foreach (Controller controller in controllers)
             {
@@ -137,7 +137,7 @@ namespace ComputerModellingLib
             }
 
             ws.Cell(row, column).Value = "Название контроллера";
-            ws.Cell(row, column + 1).Value = "Аддитивная оценка контроллера";
+            ws.Cell(row, column + 1).Value = "Интегральная оценка контроллера";
 
             foreach (Controller controller in controllers)
             {
@@ -174,6 +174,10 @@ namespace ComputerModellingLib
                 Directory.CreateDirectory(path);
             }
             path += @"\" + name;
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
             FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.ReadWrite);
             BinaryFormatter bf = new BinaryFormatter();
             bf.Serialize(stream, this);

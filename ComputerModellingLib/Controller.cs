@@ -90,6 +90,10 @@ namespace ComputerModellingLib
                 Directory.CreateDirectory(path);
             }
             path += @"\" + controllerName;
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
             FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.ReadWrite);
             BinaryFormatter bf = new BinaryFormatter();
             bf.Serialize(stream, this);
